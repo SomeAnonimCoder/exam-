@@ -5,7 +5,7 @@ before_install:
 script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build bilety.tex
-- chktex bilety.tex
+- chktex bilety.tex >linter.txt
 deploy:
   provider: releases
   api_key: 
