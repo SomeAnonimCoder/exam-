@@ -1,0 +1,16 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+script:
+- mkdir _build
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build bilety.tex
+deploy:
+  provider: releases
+  api_key:ecf9b0f68eb20a41665b8c2f3cea12478ba09099
+  file:
+  - _build/bilety.pdf
+  - bilety.tex
+  skip_cleanup: true
+  on:
+    all_branches: true
