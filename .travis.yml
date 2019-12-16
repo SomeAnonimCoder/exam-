@@ -7,7 +7,7 @@ script:
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build bilety.tex
 deploy:
   provider: releases
-  api_key: 5da051e63e2dd03024db3fcb2b2ef695359eebec
+  api_key: 4cb4fa3a6cfc5c924a6bbcb96ceb98bc186f46fa
   file:
   - _build/bilety.pdf
   - bilety.tex
