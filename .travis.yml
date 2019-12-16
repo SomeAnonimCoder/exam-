@@ -1,10 +1,11 @@
 sudo: required
 dist: trusty
 before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full chktex
 script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build bilety.tex
+- chktex bilety.tex
 deploy:
   provider: releases
   api_key: 
@@ -13,6 +14,7 @@ deploy:
   file:
   - _build/bilety.pdf
   - bilety.tex
+  - linter.txt
   skip_cleanup: true
   on:
     branch: master
