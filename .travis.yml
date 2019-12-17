@@ -1,3 +1,5 @@
+os: linux
+dist: bionic
 sudo: required
 dist: trusty
 before_install:
