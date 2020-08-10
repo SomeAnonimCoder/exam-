@@ -1,2 +1,2 @@
-# exam-
-Phischem am answers
+# exam-physchem
+Phischem exam answers
